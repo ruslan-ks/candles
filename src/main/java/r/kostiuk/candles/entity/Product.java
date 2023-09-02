@@ -35,7 +35,7 @@ public class Product implements Serializable {
 
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "id.product")
-    private Set<ProductComponent> components = new HashSet<>();
+    private Set<ProductComponent> productComponents = new HashSet<>();
 
     public Product(String name) {
         this.name = name;
@@ -63,7 +63,7 @@ public class Product implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", baseProduct=" + baseProduct +
-                ", components=" + components +
+                ", productComponents=" + productComponents +
                 '}';
     }
 
@@ -76,20 +76,16 @@ public class Product implements Serializable {
         this.baseProduct = baseProduct;
     }
 
-    public Collection<ProductComponent> getComponents() {
-        return Collections.unmodifiableSet(components);
-    }
-
-    private Component extractComponent(ProductComponent productComponent) {
-        return productComponent.getId().getComponent();
+    public Collection<ProductComponent> getProductComponents() {
+        return Collections.unmodifiableSet(productComponents);
     }
 
     /**
      * @param requiredAmount component amount required to create the product
      */
-    public void addComponent(Component component, BigDecimal requiredAmount) {
+    public void addProductComponent(Component component, BigDecimal requiredAmount) {
         ProductComponent productComponent = buildProductComponent(component, requiredAmount);
-        this.components.add(productComponent);
+        this.productComponents.add(productComponent);
     }
 
     private ProductComponent buildProductComponent(Component component, BigDecimal requiredAmount) {
