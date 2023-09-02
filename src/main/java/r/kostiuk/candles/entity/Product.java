@@ -22,6 +22,9 @@ public class Product implements Serializable {
     @NaturalId
     private String name;
 
+    @Column(name = "price", columnDefinition = "numeric(12, 2)")
+    private BigDecimal price;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "base_product_id")
     private Product baseProduct;
