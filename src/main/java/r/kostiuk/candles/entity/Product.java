@@ -37,6 +37,10 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "id.product")
     private Set<ProductComponent> productComponents = new HashSet<>();
 
+    @Setter(AccessLevel.NONE)
+    @OneToMany(mappedBy = "id.product")
+    private Set<ProductSale> productSales = new HashSet<>();
+
     public Product(String name) {
         this.name = name;
     }
@@ -64,6 +68,7 @@ public class Product implements Serializable {
                 ", name='" + name + '\'' +
                 ", baseProduct=" + baseProduct +
                 ", productComponents=" + productComponents +
+                ", productSales=" + productSales +
                 '}';
     }
 
@@ -91,5 +96,9 @@ public class Product implements Serializable {
     private ProductComponent buildProductComponent(Component component, BigDecimal requiredAmount) {
         var productComponentId = new ProductComponentId(this, component);
         return new ProductComponent(productComponentId, requiredAmount);
+    }
+
+    public Collection<ProductSale> getProductSales() {
+        return Collections.unmodifiableSet(productSales);
     }
 }
