@@ -18,6 +18,7 @@ import java.util.Objects;
 @Setter
 @Embeddable
 public class ProductSaleId implements Serializable {
+
     @ManyToOne
     private Product product;
 

@@ -15,6 +15,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "components")
 public class Component implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -16,6 +16,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "product_components")
 public class ProductComponent implements Serializable {
+
     @EmbeddedId
     private ProductComponentId id;
 

@@ -16,6 +16,7 @@ import java.util.Objects;
 @Setter
 @Embeddable
 public class ProductComponentId implements Serializable {
+
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
