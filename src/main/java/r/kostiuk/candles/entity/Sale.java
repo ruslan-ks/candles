@@ -19,7 +19,7 @@ import java.util.*;
 public class Sale implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "sold_on")
     private LocalDate soldOn;

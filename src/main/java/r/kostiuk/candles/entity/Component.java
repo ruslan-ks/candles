@@ -17,7 +17,7 @@ import java.util.Objects;
 public class Component implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NaturalId
     @Column(nullable = false)

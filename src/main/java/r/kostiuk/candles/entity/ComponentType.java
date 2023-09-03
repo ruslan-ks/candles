@@ -15,7 +15,7 @@ import java.util.*;
 public class ComponentType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NaturalId
     @Column(nullable = false)
