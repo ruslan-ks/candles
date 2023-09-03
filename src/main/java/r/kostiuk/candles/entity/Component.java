@@ -25,7 +25,7 @@ public class Component implements Serializable {
     private String name;
 
     @Column(name = "amount_in_stock", columnDefinition = "numeric(12, 3)")
-    private BigDecimal amountInStock = BigDecimal.ZERO;
+    private BigDecimal amountInStock;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "type_id")
