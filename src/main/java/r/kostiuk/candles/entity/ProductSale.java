@@ -26,11 +26,11 @@ public class ProductSale implements Serializable {
     @EmbeddedId
     private ProductSaleId id;
 
-    @Column(name = "product_price", columnDefinition = "numeric(12, 2)")
-    private BigDecimal productPrice;
-
     @Column(name = "product_count")
     private Integer productCount;
+
+    @Column(name = "product_price", columnDefinition = "numeric(12, 2)")
+    private BigDecimal productPrice;
 
     @Override
     public boolean equals(Object o) {
