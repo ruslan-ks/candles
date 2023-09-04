@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -12,7 +13,7 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "component_receipts")
-public class ComponentReceipt {
+public class ComponentReceipt implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
