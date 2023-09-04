@@ -8,6 +8,7 @@ import lombok.ToString;
 import r.kostiuk.candles.entity.id.ProductSaleId;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -49,9 +50,21 @@ public class Sale implements Serializable {
         return Collections.unmodifiableSet(productSales);
     }
 
+    /**
+     * Use current product.price
+     */
     public void addProductSale(Product product, int productCount) {
-        var productSaleId = new ProductSaleId(product, this);
-        var productSale = new ProductSale(productSaleId, product.getPrice(), productCount);
+        addProductSale(product, productCount, product.getPrice());
+    }
+
+    public void addProductSale(Product product, int productCount, BigDecimal productPrice) {
+        ProductSale productSale = buildProductSale(product, productCount, productPrice);
+        product.getProductSales().add(productSale);
         this.productSales.add(productSale);
+    }
+
+    private ProductSale buildProductSale(Product product, int productCount, BigDecimal productPrice) {
+        var productSaleId = new ProductSaleId(product, this);
+        return new ProductSale(productSaleId, productCount, productPrice);
     }
 }
