@@ -91,6 +91,7 @@ public class Product implements Serializable {
      */
     public void addProductComponent(Component component, BigDecimal requiredAmount) {
         ProductComponent productComponent = buildProductComponent(component, requiredAmount);
+        component.getProductComponents().add(productComponent);
         this.productComponents.add(productComponent);
     }
 

@@ -6,10 +6,11 @@ import org.hibernate.annotations.NaturalId;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @NoArgsConstructor
-@ToString
 @Getter
 @Setter
 @Entity
@@ -31,6 +32,10 @@ public class Component implements Serializable {
     @JoinColumn(name = "type_id")
     private ComponentType type;
 
+    @Setter(AccessLevel.NONE)
+    @OneToMany(mappedBy = "id.component")
+    private Set<ProductComponent> productComponents = new HashSet<>();
+
     public Component(String name) {
         this.name = name;
     }
@@ -49,5 +54,15 @@ public class Component implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Component{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", amountInStock=" + amountInStock +
+                ", type=" + type +
+                '}';
     }
 }
