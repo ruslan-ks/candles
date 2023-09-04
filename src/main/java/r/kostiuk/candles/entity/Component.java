@@ -6,6 +6,7 @@ import org.hibernate.annotations.NaturalId;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -36,6 +37,10 @@ public class Component implements Serializable {
     @OneToMany(mappedBy = "id.component")
     private Set<ProductComponent> productComponents = new HashSet<>();
 
+    @Setter(AccessLevel.NONE)
+    @OneToMany(mappedBy = "component")
+    private Set<ComponentReceipt> receipts = new HashSet<>();
+
     public Component(String name) {
         this.name = name;
     }
@@ -64,5 +69,14 @@ public class Component implements Serializable {
                 ", amountInStock=" + amountInStock +
                 ", type=" + type +
                 '}';
+    }
+
+    public Set<ComponentReceipt> getComponentReceipts() {
+        return Collections.unmodifiableSet(receipts);
+    }
+
+    public void addReceipt(ComponentReceipt receipt) {
+        receipt.setComponent(this);
+        receipts.add(receipt);
     }
 }
