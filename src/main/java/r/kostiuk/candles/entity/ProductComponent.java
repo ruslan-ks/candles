@@ -8,6 +8,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+/**
+ * Many-to-many association (Product-Component) that holds extra column (requiredAmount)
+ */
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor

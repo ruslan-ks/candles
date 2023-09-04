@@ -11,6 +11,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+/**
+ * Many-to-many association (Product-Sale) that holds extra columns
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
