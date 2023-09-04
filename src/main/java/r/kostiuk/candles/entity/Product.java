@@ -73,7 +73,7 @@ public class Product implements Serializable {
                 '}';
     }
 
-    public Collection<Product> getDerivedProducts() {
+    public Set<Product> getDerivedProducts() {
         return Collections.unmodifiableSet(derivedProducts);
     }
 
@@ -82,7 +82,7 @@ public class Product implements Serializable {
         this.baseProduct = baseProduct;
     }
 
-    public Collection<ProductComponent> getProductComponents() {
+    public Set<ProductComponent> getProductComponents() {
         return Collections.unmodifiableSet(productComponents);
     }
 
@@ -98,9 +98,5 @@ public class Product implements Serializable {
     private ProductComponent buildProductComponent(Component component, BigDecimal requiredAmount) {
         var productComponentId = new ProductComponentId(this, component);
         return new ProductComponent(productComponentId, requiredAmount);
-    }
-
-    public Collection<ProductSale> getProductSales() {
-        return Collections.unmodifiableSet(productSales);
     }
 }
