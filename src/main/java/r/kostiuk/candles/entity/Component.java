@@ -5,7 +5,6 @@ import lombok.*;
 import org.hibernate.annotations.NaturalId;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
@@ -26,9 +25,6 @@ public class Component implements Serializable {
     @Column(nullable = false)
     private String name;
 
-    @Column(name = "amount_in_stock", columnDefinition = "numeric(12, 3)")
-    private BigDecimal amountInStock;
-
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "type_id")
     private ComponentType type;
@@ -38,7 +34,7 @@ public class Component implements Serializable {
     private Set<ProductComponent> productComponents = new HashSet<>();
 
     @Setter(AccessLevel.NONE)
-    @OneToMany(mappedBy = "component")
+    @OneToMany(mappedBy = "component", cascade = CascadeType.PERSIST)
     private Set<ComponentReceipt> receipts = new HashSet<>();
 
     public Component(String name) {
@@ -66,12 +62,12 @@ public class Component implements Serializable {
         return "Component{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", amountInStock=" + amountInStock +
+                ", receipts=" + receipts +
                 ", type=" + type +
                 '}';
     }
 
-    public Set<ComponentReceipt> getComponentReceipts() {
+    public Set<ComponentReceipt> getReceipts() {
         return Collections.unmodifiableSet(receipts);
     }
 

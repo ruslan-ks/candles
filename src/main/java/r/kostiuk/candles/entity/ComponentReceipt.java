@@ -2,6 +2,7 @@ package r.kostiuk.candles.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
@@ -9,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -23,14 +25,20 @@ public class ComponentReceipt implements Serializable {
     @JoinColumn(name = "component_id")
     private Component component;
 
-    @Column(columnDefinition = "numeric(12, 2)")
-    private BigDecimal amount;
+    @Column(name = "amount_received", columnDefinition = "numeric(12, 3)")
+    private BigDecimal amountReceived;
 
-    @Column(name = "price_per_piece", columnDefinition = "numeric(12, 2)")
-    private BigDecimal pricePerPiece;
+    @Column(name = "total_price", columnDefinition = "numeric(12, 2)")
+    private BigDecimal totalPrice;
 
     @Column(name = "received_on")
     private LocalDate receivedOn;
+
+    public ComponentReceipt(BigDecimal amountReceived, BigDecimal totalPrice, LocalDate receivedOn) {
+        this.amountReceived = amountReceived;
+        this.totalPrice = totalPrice;
+        this.receivedOn = receivedOn;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -52,9 +60,8 @@ public class ComponentReceipt implements Serializable {
     public String toString() {
         return "ComponentReceipt{" +
                 "id=" + id +
-                ", component.id=" + component.getId() +
-                ", amount=" + amount +
-                ", pricePerPiece=" + pricePerPiece +
+                ", amountReceived=" + amountReceived +
+                ", totalPrice=" + totalPrice +
                 ", receivedOn=" + receivedOn +
                 '}';
     }
