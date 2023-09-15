@@ -1,17 +1,22 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     open-in-view: false
     show-sql: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
     properties:
       hibernate:
         jdbc:
           timezone: UTC
+        format_sql: true
   datasource:
-    driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://postgres-0/candles
+    #    url: jdbc:postgresql://postgres-0/candles
     url: jdbc:postgresql://127.0.0.1:5432/candles
     username: postgres
     password: postgres
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:candles-init.sql
