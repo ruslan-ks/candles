@@ -26,6 +26,9 @@ public class Product implements Serializable {
     @Column(name = "price", columnDefinition = "numeric(12, 2)")
     private BigDecimal price;
 
+    @Column(name = "quantity_in_stock")
+    private Integer quantityInStock;
+
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "id.product")
     private Set<ProductComponent> productComponents = new HashSet<>();
@@ -72,6 +75,7 @@ public class Product implements Serializable {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", quantityInStock=" + quantityInStock +
                 ", productComponents=" + productComponents +
                 ", includedProducts=" + includedProducts +
                 ", productSales=" + productSales +
