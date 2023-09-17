@@ -1,10 +1,7 @@
 spring:
   jpa:
-    hibernate:
-      ddl-auto: create
     open-in-view: false
     show-sql: true
-    defer-datasource-initialization: true
     properties:
       hibernate:
         jdbc:
@@ -16,7 +13,7 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
-  sql:
-    init:
-      mode: always
-      data-locations: classpath:candles-init.sql
+  flyway:
+    url: jdbc:postgresql://127.0.0.1:5432/candles
+    user: postgres
+    password: postgres
