@@ -1,0 +1,1 @@
+ALTER TABLE component_types ADD CONSTRAINT not_empty_component_type_name CHECK(length(name) > 0);
