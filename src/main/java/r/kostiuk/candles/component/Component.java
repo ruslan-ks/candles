@@ -1,8 +1,11 @@
-package r.kostiuk.candles.entity;
+package r.kostiuk.candles.component;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
+import r.kostiuk.candles.entity.ComponentReceipt;
+import r.kostiuk.candles.entity.ComponentType;
+import r.kostiuk.candles.entity.ProductComponent;
 
 import java.io.Serializable;
 import java.util.Collections;

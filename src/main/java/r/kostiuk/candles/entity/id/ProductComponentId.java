@@ -5,7 +5,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 import r.kostiuk.candles.entity.Product;
-import r.kostiuk.candles.entity.Component;
+import r.kostiuk.candles.component.Component;
 
 import java.io.Serializable;
 import java.util.Objects;

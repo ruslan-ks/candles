@@ -3,6 +3,7 @@ package r.kostiuk.candles.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
+import r.kostiuk.candles.component.Component;
 
 import java.io.Serializable;
 import java.util.*;
