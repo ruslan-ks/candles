@@ -1,4 +1,4 @@
-package r.kostiuk.candles.entity;
+package r.kostiuk.candles.component.receipt;
 
 import jakarta.persistence.*;
 import lombok.Getter;

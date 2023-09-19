@@ -1,6 +1,6 @@
 package r.kostiuk.candles.util;
 
-import r.kostiuk.candles.entity.ComponentReceipt;
+import r.kostiuk.candles.component.receipt.ComponentReceipt;
 import r.kostiuk.candles.entity.Product;
 
 import java.math.BigDecimal;
