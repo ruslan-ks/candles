@@ -34,6 +34,8 @@ public class ComponentReceipt implements Serializable {
     @Column(name = "received_on")
     private LocalDate receivedOn;
 
+    private String comment;
+
     public ComponentReceipt(BigDecimal amountReceived, BigDecimal totalPrice, LocalDate receivedOn) {
         this.amountReceived = amountReceived;
         this.totalPrice = totalPrice;
@@ -63,6 +65,7 @@ public class ComponentReceipt implements Serializable {
                 ", amountReceived=" + amountReceived +
                 ", totalPrice=" + totalPrice +
                 ", receivedOn=" + receivedOn +
+                ", comment='" + comment + "'" +
                 '}';
     }
 }
