@@ -1,4 +1,4 @@
-package r.kostiuk.candles.entity;
+package r.kostiuk.candles.component.type;
 
 import jakarta.persistence.*;
 import lombok.*;
