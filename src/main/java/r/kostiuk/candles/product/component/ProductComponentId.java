@@ -1,4 +1,4 @@
-package r.kostiuk.candles.entity.id;
+package r.kostiuk.candles.product.component;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;

@@ -1,8 +1,7 @@
-package r.kostiuk.candles.entity;
+package r.kostiuk.candles.product.component;
 
 import jakarta.persistence.*;
 import lombok.*;
-import r.kostiuk.candles.entity.id.ProductComponentId;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
