@@ -1,4 +1,4 @@
-package r.kostiuk.candles.entity.id;
+package r.kostiuk.candles.sale;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.ManyToOne;
@@ -6,8 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import r.kostiuk.candles.entity.Product;
-import r.kostiuk.candles.entity.Sale;
+import r.kostiuk.candles.product.Product;
 
 import java.io.Serializable;
 import java.util.Objects;

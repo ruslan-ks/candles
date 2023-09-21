@@ -1,9 +1,10 @@
-package r.kostiuk.candles.entity;
+package r.kostiuk.candles.receipt;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import r.kostiuk.candles.component.Component;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

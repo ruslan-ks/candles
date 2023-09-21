@@ -1,11 +1,10 @@
-package r.kostiuk.candles.entity;
+package r.kostiuk.candles.sale;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
-import r.kostiuk.candles.entity.id.ProductSaleId;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
