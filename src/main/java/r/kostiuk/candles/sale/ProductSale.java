@@ -1,4 +1,4 @@
-package r.kostiuk.candles.product.sale;
+package r.kostiuk.candles.sale;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
