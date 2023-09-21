@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import r.kostiuk.candles.dto.response.ComponentResponse;
+import r.kostiuk.candles.component.dto.ComponentResponse;
 import r.kostiuk.candles.service.ComponentService;
 
 @RequiredArgsConstructor

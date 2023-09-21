@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import r.kostiuk.candles.dto.response.ComponentResponse;
+import r.kostiuk.candles.component.dto.ComponentResponse;
 import r.kostiuk.candles.repository.ComponentRepository;
 
 @RequiredArgsConstructor
