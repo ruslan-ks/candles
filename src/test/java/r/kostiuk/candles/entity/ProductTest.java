@@ -2,6 +2,7 @@ package r.kostiuk.candles.entity;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import r.kostiuk.candles.product.Product;
 import r.kostiuk.candles.util.TestData;
 
 import java.math.BigDecimal;

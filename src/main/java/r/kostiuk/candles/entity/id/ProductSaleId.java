@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import r.kostiuk.candles.entity.Product;
+import r.kostiuk.candles.product.Product;
 import r.kostiuk.candles.entity.Sale;
 
 import java.io.Serializable;
