@@ -1,4 +1,4 @@
-package r.kostiuk.candles.service;
+package r.kostiuk.candles.component;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
