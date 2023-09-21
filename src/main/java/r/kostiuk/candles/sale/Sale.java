@@ -5,8 +5,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import r.kostiuk.candles.entity.ProductSale;
-import r.kostiuk.candles.entity.id.ProductSaleId;
+import r.kostiuk.candles.product.sale.ProductSale;
+import r.kostiuk.candles.product.sale.ProductSaleId;
 import r.kostiuk.candles.product.Product;
 
 import java.io.Serializable;
