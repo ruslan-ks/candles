@@ -3,6 +3,7 @@ package r.kostiuk.candles.component;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
+import r.kostiuk.candles.component.vaildation.ValidComponent;
 import r.kostiuk.candles.receipt.ComponentReceipt;
 import r.kostiuk.candles.component.type.ComponentType;
 import r.kostiuk.candles.product.component.ProductComponent;
@@ -18,7 +19,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "components")
-public class Component implements Serializable {
+public class Component implements ValidComponent, Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
