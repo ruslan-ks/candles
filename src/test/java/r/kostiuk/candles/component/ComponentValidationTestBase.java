@@ -42,5 +42,6 @@ public abstract class ComponentValidationTestBase {
 
         Set<ConstraintViolation<ValidComponent>> violations = validator.validate(componentWithEmptyName);
         assertThat(violations).isNotEmpty();
+        System.out.println(violations);
     }
 }

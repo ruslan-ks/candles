@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import r.kostiuk.candles.component.type.ComponentType;
 
 public interface ValidComponent {
-    @NotEmpty
+    @NotEmpty(message = "{component.name.notEmpty}")
     @NotNull
     String getName();
 
