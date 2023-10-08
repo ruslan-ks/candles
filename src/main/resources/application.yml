@@ -17,3 +17,24 @@ spring:
     url: jdbc:postgresql://127.0.0.1:5432/candles
     user: postgres
     password: postgres
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+    git:
+      enabled: true
+      mode: full
+    java:
+      enabled: true
+    os:
+      enabled: true
+info:
+  app:
+    name: Candles
+    description: AromaHouse management application
+    version: 0.1
+    author: Ruslan Kostiuk
