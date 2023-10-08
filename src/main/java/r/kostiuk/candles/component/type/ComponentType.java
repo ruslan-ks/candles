@@ -17,18 +17,21 @@ public class ComponentType implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @NaturalId
     @Column(nullable = false)
     private String name;
 
+    private String measurement;
+
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "type", cascade = CascadeType.PERSIST)
     private Set<Component> components = new HashSet<>();
 
-    public ComponentType(String name) {
+    public ComponentType(String name, String measurement) {
         this.name = name;
+        this.measurement = measurement;
     }
 
     @Override
@@ -52,6 +55,7 @@ public class ComponentType implements Serializable {
         return "ComponentType{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", measurement='" + measurement + '\'' +
                 '}';
     }
 
