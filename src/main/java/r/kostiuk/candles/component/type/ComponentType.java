@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
 import r.kostiuk.candles.component.Component;
+import r.kostiuk.candles.component.type.validation.ValidComponentType;
 
 import java.io.Serializable;
 import java.util.*;
@@ -13,22 +14,25 @@ import java.util.*;
 @Setter
 @Entity
 @Table(name = "component_types")
-public class ComponentType implements Serializable {
+public class ComponentType implements ValidComponentType, Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @NaturalId
     @Column(nullable = false)
     private String name;
 
+    private String measurement;
+
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "type", cascade = CascadeType.PERSIST)
     private Set<Component> components = new HashSet<>();
 
-    public ComponentType(String name) {
+    public ComponentType(String name, String measurement) {
         this.name = name;
+        this.measurement = measurement;
     }
 
     @Override
@@ -52,6 +56,7 @@ public class ComponentType implements Serializable {
         return "ComponentType{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", measurement='" + measurement + '\'' +
                 '}';
     }
 
