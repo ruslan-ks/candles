@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
 import r.kostiuk.candles.component.Component;
+import r.kostiuk.candles.component.type.validation.ValidComponentType;
 
 import java.io.Serializable;
 import java.util.*;
@@ -13,7 +14,7 @@ import java.util.*;
 @Setter
 @Entity
 @Table(name = "component_types")
-public class ComponentType implements Serializable {
+public class ComponentType implements ValidComponentType, Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

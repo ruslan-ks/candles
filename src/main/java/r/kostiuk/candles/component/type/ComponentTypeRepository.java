@@ -9,4 +9,5 @@ import r.kostiuk.candles.component.type.dto.ComponentTypeResponse;
 @Repository
 public interface ComponentTypeRepository extends JpaRepository<ComponentType, Integer> {
     Page<ComponentTypeResponse> findBy(Pageable pageable);
+    boolean existsByName(String componentTypeName);
 }

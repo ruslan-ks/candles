@@ -38,4 +38,9 @@ public class DataJpaComponentTypeService implements ComponentTypeService {
         return typeRepository.findById(id)
                 .orElseThrow(() -> new ComponentTypeNotFoundException("ComponentType with id " + id + " not found"));
     }
+
+    @Override
+    public boolean exists(String componentTypeName) {
+        return typeRepository.existsByName(componentTypeName);
+    }
 }

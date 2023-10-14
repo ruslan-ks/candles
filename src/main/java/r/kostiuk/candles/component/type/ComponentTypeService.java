@@ -11,4 +11,5 @@ public interface ComponentTypeService {
     ComponentTypeResponse create(NewComponentTypeRequest newComponentRequest);
     void deleteById(int componentTypeId) throws ComponentTypeNotFoundException;
     ComponentType findById(int componentTypeId) throws ComponentTypeNotFoundException;
+    boolean exists(String componentTypeName);
 }
