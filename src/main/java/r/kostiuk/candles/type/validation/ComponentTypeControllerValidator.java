@@ -2,14 +2,14 @@ package r.kostiuk.candles.type.validation;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import r.kostiuk.candles.type.ComponentTypeService;
 import r.kostiuk.candles.exception.ControllerValidationException;
 import r.kostiuk.candles.exception.CustomValidationException;
+import r.kostiuk.candles.messages.MessageProvider;
 
 @Component
 public class ComponentTypeControllerValidator extends ComponentTypeValidator {
-    public ComponentTypeControllerValidator(ComponentTypeService typeService) {
-        super(typeService);
+    public ComponentTypeControllerValidator(MessageProvider messageProvider) {
+        super(messageProvider);
     }
 
     @Override
