@@ -1,8 +1,8 @@
-package r.kostiuk.candles.component.type.validation;
+package r.kostiuk.candles.type.validation;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.Errors;
-import r.kostiuk.candles.component.type.ComponentTypeService;
+import r.kostiuk.candles.type.ComponentTypeService;
 import r.kostiuk.candles.validation.CustomValidator;
 
 @RequiredArgsConstructor

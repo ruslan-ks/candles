@@ -1,4 +1,4 @@
-package r.kostiuk.candles.component.type.exception;
+package r.kostiuk.candles.type.exception;
 
 import r.kostiuk.candles.exception.ItemNotFoundException;
 

@@ -1,13 +1,13 @@
-package r.kostiuk.candles.component.type;
+package r.kostiuk.candles.type;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import r.kostiuk.candles.component.type.dto.ComponentTypeMapper;
-import r.kostiuk.candles.component.type.dto.ComponentTypeResponse;
-import r.kostiuk.candles.component.type.dto.NewComponentTypeRequest;
-import r.kostiuk.candles.component.type.exception.ComponentTypeNotFoundException;
+import r.kostiuk.candles.type.dto.ComponentTypeMapper;
+import r.kostiuk.candles.type.dto.ComponentTypeResponse;
+import r.kostiuk.candles.type.dto.NewComponentTypeRequest;
+import r.kostiuk.candles.type.exception.ComponentTypeNotFoundException;
 
 @RequiredArgsConstructor
 @Service

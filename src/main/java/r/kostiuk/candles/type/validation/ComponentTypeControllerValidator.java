@@ -1,8 +1,8 @@
-package r.kostiuk.candles.component.type.validation;
+package r.kostiuk.candles.type.validation;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import r.kostiuk.candles.component.type.ComponentTypeService;
+import r.kostiuk.candles.type.ComponentTypeService;
 import r.kostiuk.candles.exception.ControllerValidationException;
 import r.kostiuk.candles.exception.CustomValidationException;
 

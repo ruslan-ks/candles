@@ -1,7 +1,7 @@
-package r.kostiuk.candles.component.type.dto;
+package r.kostiuk.candles.type.dto;
 
 import lombok.Data;
-import r.kostiuk.candles.component.type.validation.ValidComponentType;
+import r.kostiuk.candles.type.validation.ValidComponentType;
 
 @Data
 public class NewComponentTypeRequest implements ValidComponentType {
