@@ -1,13 +1,18 @@
 package r.kostiuk.candles.type.validation;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import r.kostiuk.candles.type.ComponentTypeService;
 import r.kostiuk.candles.validation.CustomValidator;
 
-@RequiredArgsConstructor
 public abstract class ComponentTypeValidator extends CustomValidator<ValidComponentType> {
-    private final ComponentTypeService typeService;
+    private ComponentTypeService typeService;
+
+    // Setter injection, so it's easier to mock when testing multiple implementations of this class
+    @Autowired
+    public void setTypeService(ComponentTypeService typeService) {
+        this.typeService = typeService;
+    }
 
     @Override
     public boolean supports(Class<?> type) {
