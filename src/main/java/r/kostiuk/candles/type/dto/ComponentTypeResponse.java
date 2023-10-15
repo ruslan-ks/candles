@@ -1,4 +1,4 @@
-package r.kostiuk.candles.component.type.dto;
+package r.kostiuk.candles.type.dto;
 
 public record ComponentTypeResponse(int id, String name, String measurement) {
 }

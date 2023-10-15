@@ -1,4 +1,4 @@
-package r.kostiuk.candles.component.type;
+package r.kostiuk.candles.type;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -6,9 +6,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import r.kostiuk.candles.component.type.dto.ComponentTypeResponse;
-import r.kostiuk.candles.component.type.dto.NewComponentTypeRequest;
-import r.kostiuk.candles.component.type.validation.ComponentTypeControllerValidator;
+import r.kostiuk.candles.type.dto.ComponentTypeResponse;
+import r.kostiuk.candles.type.dto.NewComponentTypeRequest;
+import r.kostiuk.candles.type.validation.ComponentTypeControllerValidator;
 
 @RequiredArgsConstructor
 @RestController

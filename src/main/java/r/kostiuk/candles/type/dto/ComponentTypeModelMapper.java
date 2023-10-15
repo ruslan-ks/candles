@@ -1,9 +1,9 @@
-package r.kostiuk.candles.component.type.dto;
+package r.kostiuk.candles.type.dto;
 
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
-import r.kostiuk.candles.component.type.ComponentType;
+import r.kostiuk.candles.type.ComponentType;
 
 @RequiredArgsConstructor
 @Component

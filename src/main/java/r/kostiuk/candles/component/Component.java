@@ -5,7 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.NaturalId;
 import r.kostiuk.candles.component.vaildation.ValidComponent;
 import r.kostiuk.candles.receipt.ComponentReceipt;
-import r.kostiuk.candles.component.type.ComponentType;
+import r.kostiuk.candles.type.ComponentType;
 import r.kostiuk.candles.product.component.ProductComponent;
 
 import java.io.Serializable;

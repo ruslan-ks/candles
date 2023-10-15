@@ -1,4 +1,4 @@
-package r.kostiuk.candles.component.type.validation;
+package r.kostiuk.candles.type.validation;
 
 import jakarta.validation.constraints.NotEmpty;
 

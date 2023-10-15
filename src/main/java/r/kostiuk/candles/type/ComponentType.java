@@ -1,10 +1,10 @@
-package r.kostiuk.candles.component.type;
+package r.kostiuk.candles.type;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
 import r.kostiuk.candles.component.Component;
-import r.kostiuk.candles.component.type.validation.ValidComponentType;
+import r.kostiuk.candles.type.validation.ValidComponentType;
 
 import java.io.Serializable;
 import java.util.*;
