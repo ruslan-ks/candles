@@ -1,13 +1,15 @@
-package r.kostiuk.candles.entity;
+package r.kostiuk.candles.product.component;
 
 import jakarta.persistence.*;
 import lombok.*;
-import r.kostiuk.candles.entity.id.ProductComponentId;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+/**
+ * Many-to-many association (Product-Component) that holds extra column (requiredAmount)
+ */
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,6 +18,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "product_components")
 public class ProductComponent implements Serializable {
+
     @EmbeddedId
     private ProductComponentId id;
 
