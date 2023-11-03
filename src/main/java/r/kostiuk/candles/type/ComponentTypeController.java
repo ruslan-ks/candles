@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import r.kostiuk.candles.type.dto.ComponentTypeCountResponse;
 import r.kostiuk.candles.type.dto.ComponentTypeResponse;
 import r.kostiuk.candles.type.dto.NewComponentTypeRequest;
 import r.kostiuk.candles.type.validation.ComponentTypeControllerValidator;
@@ -18,7 +19,7 @@ public class ComponentTypeController {
     private final ComponentTypeControllerValidator typeValidator;
 
     @GetMapping
-    public Page<ComponentTypeResponse> findPage(Pageable pageable) {
+    public Page<ComponentTypeCountResponse> findPage(Pageable pageable) {
         return typeService.findPage(pageable);
     }
 
