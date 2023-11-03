@@ -27,7 +27,7 @@ public class ComponentTypeController {
     @PostMapping
     public ComponentTypeResponse add(@Valid @RequestBody NewComponentTypeRequest request) {
         typeValidator.validate(request);
-        return typeService.create(request);
+        return typeService.add(request);
     }
 
     @DeleteMapping("/{id}")
