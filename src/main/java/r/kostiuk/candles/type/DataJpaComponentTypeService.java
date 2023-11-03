@@ -22,7 +22,7 @@ public class DataJpaComponentTypeService implements ComponentTypeService {
     }
 
     @Override
-    public ComponentTypeResponse create(NewComponentTypeRequest newComponentRequest) {
+    public ComponentTypeResponse add(NewComponentTypeRequest newComponentRequest) {
         ComponentType componentType = typeMapper.toComponentType(newComponentRequest);
         ComponentType savedComponentType = typeRepository.save(componentType);
         return typeMapper.toComponentTypeResponse(savedComponentType);

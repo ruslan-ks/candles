@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 abstract class ComponentTypeValidatorTestBase {
-    private ComponentTypeValidator validator;
+    protected ComponentTypeValidator validator;
 
     @Mock
     private ComponentTypeService typeService;
