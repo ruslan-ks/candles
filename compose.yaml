@@ -1,0 +1,9 @@
+version: "3"
+services:
+  postgres-0:
+    image: postgres
+    environment:
+      POSTGRES_DB: candles
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432"
