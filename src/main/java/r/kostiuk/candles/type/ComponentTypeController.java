@@ -25,7 +25,7 @@ public class ComponentTypeController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ComponentTypeResponse create(@Valid @RequestBody NewComponentTypeRequest request) {
+    public ComponentTypeResponse add(@Valid @RequestBody NewComponentTypeRequest request) {
         typeValidator.validate(request);
         return typeService.create(request);
     }
