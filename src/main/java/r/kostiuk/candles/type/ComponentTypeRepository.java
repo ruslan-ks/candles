@@ -9,7 +9,7 @@ import r.kostiuk.candles.type.dto.ComponentTypeCountResponse;
 
 @Repository
 public interface ComponentTypeRepository extends JpaRepository<ComponentType, Integer> {
-    
+
     @Query("""
             select new r.kostiuk.candles.type.dto.ComponentTypeCountResponse(ct, count(c))
             from ComponentType ct

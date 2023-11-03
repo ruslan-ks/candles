@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import r.kostiuk.candles.type.dto.ComponentTypeCountResponse;
 import r.kostiuk.candles.type.dto.ComponentTypeMapper;
 import r.kostiuk.candles.type.dto.ComponentTypeResponse;
 import r.kostiuk.candles.type.dto.NewComponentTypeRequest;
@@ -16,8 +17,8 @@ public class DataJpaComponentTypeService implements ComponentTypeService {
     private final ComponentTypeMapper typeMapper;
 
     @Override
-    public Page<ComponentTypeResponse> findPage(Pageable pageable) {
-        return typeRepository.findBy(pageable);
+    public Page<ComponentTypeCountResponse> findPage(Pageable pageable) {
+        return typeRepository.findComponentTypesCount(pageable);
     }
 
     @Override
