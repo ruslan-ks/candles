@@ -7,16 +7,6 @@ spring:
         jdbc:
           timezone: UTC
         format_sql: true
-  datasource:
-    #    url: jdbc:postgresql://postgres-0/candles
-    url: jdbc:postgresql://127.0.0.1:5432/candles
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
-  flyway:
-    url: jdbc:postgresql://127.0.0.1:5432/candles
-    user: postgres
-    password: postgres
 management:
   endpoints:
     web:
