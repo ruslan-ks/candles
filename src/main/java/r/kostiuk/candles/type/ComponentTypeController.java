@@ -1,5 +1,7 @@
 package r.kostiuk.candles.type;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -18,11 +20,15 @@ public class ComponentTypeController {
     private final ComponentTypeService typeService;
     private final ComponentTypeControllerValidator typeValidator;
 
+    @Operation(summary = "Get types page")
     @GetMapping
     public Page<ComponentTypeCountResponse> findPage(Pageable pageable) {
         return typeService.findPage(pageable);
     }
 
+    @Operation(summary = "Add new type")
+    @ApiResponse(responseCode = "201", description = "Type added successfully")
+    @ApiResponse(responseCode = "400", description = "Validation failed")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ComponentTypeResponse add(@Valid @RequestBody NewComponentTypeRequest request) {
@@ -30,6 +36,8 @@ public class ComponentTypeController {
         return typeService.add(request);
     }
 
+    @Operation(summary = "Delete type")
+    @ApiResponse(responseCode = "200", description = "Type deleted successfully")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id) {
         typeService.deleteById(id);
