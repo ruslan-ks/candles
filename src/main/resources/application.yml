@@ -28,3 +28,5 @@ info:
     description: AromaHouse management application
     version: 0.1
     author: Ruslan Kostiuk
+springdoc:
+  default-produces-media-type: application/json
