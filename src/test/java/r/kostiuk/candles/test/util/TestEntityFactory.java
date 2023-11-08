@@ -8,12 +8,14 @@ import java.util.List;
 public interface TestEntityFactory {
 
     /**
-     * @return List of new Component instances. Every call on the same object produces unique instances
+     * @return List of new Component instances.
+     * Every call on the same object produces unique instances
      */
     List<Component> createComponents(int count);
 
     /**
-     * @return List of new Component instances. Every call on the same object  produces unique instances
+     * @return List of new Component instances with all fields initialized.
+     * Every call on the same object produces unique instances
      */
     List<ComponentType> createTypes(int count);
 }
