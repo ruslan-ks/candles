@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import r.kostiuk.candles.component.Component;
 import r.kostiuk.candles.test.util.TestEntityFactory;
 import r.kostiuk.candles.test.util.TestEntityFactoryImpl;
-import r.kostiuk.candles.test.util.PostgresContainerExtension;
+import r.kostiuk.candles.test.util.DBContainerExtension;
 import r.kostiuk.candles.type.dto.ComponentTypeCountResponse;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 @DataJpaTest
-@ExtendWith(PostgresContainerExtension.class)
+@ExtendWith(DBContainerExtension.class)
 class ComponentTypeRepositoryTest {
     private final TestEntityFactory entityFactory = new TestEntityFactoryImpl();
 
