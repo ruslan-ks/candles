@@ -38,6 +38,7 @@ public class ComponentTypeController {
 
     @Operation(summary = "Delete type")
     @ApiResponse(responseCode = "200", description = "Type deleted successfully")
+    @ApiResponse(responseCode = "404", description = "Type not found")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id) {
         typeService.deleteById(id);

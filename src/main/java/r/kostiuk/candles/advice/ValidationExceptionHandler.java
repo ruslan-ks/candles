@@ -1,5 +1,6 @@
 package r.kostiuk.candles.advice;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -23,6 +24,7 @@ public class ValidationExceptionHandler {
 
     private final MessageProvider messageProvider;
 
+    @ApiResponse(responseCode = "400", description = "Validation failed")
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ApiError handleMethodArgumentNotFound(MethodArgumentNotValidException e) {
@@ -46,7 +48,9 @@ public class ValidationExceptionHandler {
         return ApiError.badRequest(uiMessage, Map.of("invalidFields", validationErrors));
     }
 
+    @ApiResponse(responseCode = "400", description = "Validation failed")
     @ExceptionHandler(CustomValidationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ApiError handleCustomValidationException(CustomValidationException e) {
         return buildValidationApiError(e.getErrors());
     }
