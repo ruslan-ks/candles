@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 public class EntitySuppliers {
     private EntitySuppliers() {}
 
-    public static Supplier<Component> sequentialNameComponentSupplier() {
+    public static Supplier<Component> sequentialNameComponentSupplier(ComponentType type) {
         return new Supplier<>() {
             long index = 0;
 
@@ -16,12 +16,13 @@ public class EntitySuppliers {
             public Component get() {
                 var component = new Component();
                 component.setName("Component " + ++index);
+                type.addComponent(component);
                 return component;
             }
         };
     }
 
-    public static Supplier<ComponentType> sequentialNameComponentTypeSupplier() {
+    public static Supplier<ComponentType> sequentialNameTypeSupplier(String defaultMeasurement) {
         return new Supplier<>() {
             long index = 0;
 
@@ -29,6 +30,7 @@ public class EntitySuppliers {
             public ComponentType get() {
                 var type = new ComponentType();
                 type.setName("Type " + ++index);
+                type.setMeasurement(defaultMeasurement);
                 return type;
             }
         };
