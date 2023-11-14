@@ -29,7 +29,7 @@ public class Component implements ValidComponent, Serializable {
     @Column(nullable = false)
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "type_id")
     private ComponentType type;
 
